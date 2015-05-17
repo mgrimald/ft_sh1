@@ -6,7 +6,11 @@
 /*   By: mgrimald <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/12 20:27:22 by mgrimald          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2015/05/16 23:39:01 by mgrimald         ###   ########.fr       */
+=======
+/*   Updated: 2015/05/14 13:05:07 by mgrimald         ###   ########.fr       */
+>>>>>>> origin/master
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +79,14 @@ int			check_file(char *path)
 	{
 		pwd = getcwd(NULL, 0);
 		f = ft_strnew(ft_strlen(path) + ft_strlen(pwd) + 2);
+<<<<<<< HEAD
 		ft_strcpy(f, pwd);
 		if (pwd[ft_strlen(pwd) - 1] != '/')
 			ft_strcat(f, "/");
 		f = ft_strcat(f, path);
+=======
+		f = ft_strcat(ft_strcat(ft_strcpy(f, pwd), "/"), path);
+>>>>>>> origin/master
 		ft_memdel((void**)&pwd);
 	}
 	else

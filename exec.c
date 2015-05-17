@@ -6,7 +6,11 @@
 /*   By: mgrimald <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/13 22:30:42 by mgrimald          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2015/05/16 23:29:37 by mgrimald         ###   ########.fr       */
+=======
+/*   Updated: 2015/05/16 20:19:18 by mgrimald         ###   ########.fr       */
+>>>>>>> origin/master
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +22,11 @@ void		exec_glob(char **argv, char **env)
 		if (ft_strchr(argv[0], '/') != NULL || built_in(argv, env) == 0)
 		{
 			if (argv[0][0] == '.' || ft_strchr(argv[0], '/') != NULL)
+<<<<<<< HEAD
 				exec_command(argv, argv[0], env);
+=======
+				exec_command(argv, argv[1], env);
+>>>>>>> origin/master
 			else
 				command_in_path(argv, env);
 		}
