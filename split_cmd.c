@@ -6,7 +6,7 @@
 /*   By: mgrimald <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/08 14:07:41 by mgrimald          #+#    #+#             */
-/*   Updated: 2015/05/16 19:15:41 by mgrimald         ###   ########.fr       */
+/*   Updated: 2015/05/17 14:27:06 by mgrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,6 @@ char		*gestion_dollar(char *ret, char *str, int *j, int space)
 	tmp = ft_strndup(str + *j, k - 1);
 	tip = get_str_env(tmp);
 	(void)space;
-//	printf("\ta\t%s\n\tn\t%s\n", tmp, tip);
-//	int		m;
-//	char	*home;
-//	home = get_str_env("HOME");
-//	if (tip != NULL && *tip != '\0' && space == 1 &&
-//			ft_strcmp(tmp, "HOME") != 0 &&
-//			ft_strncmp(tip, home, (m = ft_strlen(home))))
-//		ft_memmove(tip, tip, '~');
 	aut = ft_strnew(ft_strlen(ret) + ft_strlen(str + *j) + ft_strlen(tip) + 3);
 	aut = ft_strcpy(aut, ret);
 	aut = ft_strcat(aut, tip);

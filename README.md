@@ -14,3 +14,7 @@ Automatically execute a file given in argument.(each command separated by a new 
 Possibility to set a personnalised prompt by setting PROMPT_MESS with the wanted element.
 (PROMPT_MESS can be set with other env variables and colors but it needs to be properly formated. (inhibitors help a lot))
 basic interception and inhibition of a few signal (^Z and ^C)
+
+if you find any crash or leaks, please report them to mgrimald@student.42.fr
+
+ENJOY :-D

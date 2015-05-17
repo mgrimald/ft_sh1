@@ -6,16 +6,11 @@
 /*   By: mgrimald <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/12 20:27:22 by mgrimald          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2015/05/16 23:39:01 by mgrimald         ###   ########.fr       */
-=======
-/*   Updated: 2015/05/14 13:05:07 by mgrimald         ###   ########.fr       */
->>>>>>> origin/master
+/*   Updated: 2015/05/17 14:34:44 by mgrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sh1.h"
-#include <sys/types.h>
 #include <sys/stat.h>
 
 static int	file_dir_link(struct stat s, char *path)
@@ -24,8 +19,7 @@ static int	file_dir_link(struct stat s, char *path)
 	char	*tmp;
 	int		len;
 
-	ret = 0;
-	if (S_ISDIR(s.st_mode) != 0)
+	if ((ret = 0) || S_ISDIR(s.st_mode) != 0)
 		ret = 2;
 	else if (S_ISREG(s.st_mode) != 0)
 		ret = 1;
@@ -33,7 +27,10 @@ static int	file_dir_link(struct stat s, char *path)
 	{
 		tmp = ft_strnew(1024);
 		if ((len = readlink(path, tmp, 1023)) == -1)
-			exit (-1);//error();
+		{
+			ft_putendl("Readlink : error: aborbtion of the readlink");
+			return (-1);
+		}
 		tmp[len] = '\0';
 		ft_putendl("gestion of the symlinks has not been implented yet");
 		ft_putstr(path);
@@ -79,14 +76,10 @@ int			check_file(char *path)
 	{
 		pwd = getcwd(NULL, 0);
 		f = ft_strnew(ft_strlen(path) + ft_strlen(pwd) + 2);
-<<<<<<< HEAD
 		ft_strcpy(f, pwd);
 		if (pwd[ft_strlen(pwd) - 1] != '/')
 			ft_strcat(f, "/");
 		f = ft_strcat(f, path);
-=======
-		f = ft_strcat(ft_strcat(ft_strcpy(f, pwd), "/"), path);
->>>>>>> origin/master
 		ft_memdel((void**)&pwd);
 	}
 	else
