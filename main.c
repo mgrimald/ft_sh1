@@ -6,7 +6,7 @@
 /*   By: mgrimald <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/12 20:43:12 by mgrimald          #+#    #+#             */
-/*   Updated: 2015/05/16 23:44:35 by mgrimald         ###   ########.fr       */
+/*   Updated: 2015/05/17 13:45:05 by mgrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ static void	try_path(char **path, char *cmd, char **tab_cmd, char **env)
 	}
 	if (path[j] == NULL)
 	{
-		ft_putstr("Command not found: ");
+		ft_putstr("Command not found :");
 		ft_putendl(tab_cmd[0]);
 	}
 	else
