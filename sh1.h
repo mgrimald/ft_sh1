@@ -6,7 +6,7 @@
 /*   By: mgrimald <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/04 14:32:21 by mgrimald          #+#    #+#             */
-/*   Updated: 2015/05/16 20:18:12 by mgrimald         ###   ########.fr       */
+/*   Updated: 2015/05/17 14:47:56 by mgrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 # define SH1_H
 
 # include "libft/includes/libft.h"
-# include <sys/types.h>
-# include <sys/wait.h>
-# include <signal.h>
-# include <stdio.h>
 
 void	exec_glob(char **argv, char **env);
 void	sh_increase_shlvl(void);
@@ -49,4 +45,5 @@ int		built_in(char **argv, char **env);
 void	sh_boucle_lecture();
 void	exec_command(char **argv, char *cmd, char **env);
 void	command_in_path(char **tab_cmd, char **env);
+
 #endif

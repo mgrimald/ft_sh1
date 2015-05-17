@@ -6,11 +6,12 @@
 /*   By: mgrimald <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/13 22:30:42 by mgrimald          #+#    #+#             */
-/*   Updated: 2015/05/17 14:07:29 by mgrimald         ###   ########.fr       */
+/*   Updated: 2015/05/17 14:51:37 by mgrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sh1.h"
+#include <sys/wait.h>
 
 void		exec_glob(char **argv, char **env)
 {
