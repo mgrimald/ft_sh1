@@ -6,7 +6,7 @@
 #    By: mgrimald <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/10 17:46:31 by mgrimald          #+#    #+#              #
-#    Updated: 2015/05/17 14:18:49 by mgrimald         ###   ########.fr        #
+#    Updated: 2015/05/17 20:06:06 by mgrimald         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -100,20 +100,29 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(SRC)
-	@echo "\033[1;36m[$(NAME)][Compile all \".c\" using $(CC)]\033[0m"
+	@echo "\033[1;36m[Compile all \".c\" using $(CC)]\033[0m"
 	@$(CC) $(FLAGS) -I $(DIR) -c $(SRC)
-	@echo "\033[1;36m[$(NAME)][Compile all \".o\"]\033[0m"
+	@echo "\033[1;36m[Compile all \".o\"]\033[0m"
+	@ar rc $(NAME) $(OBJ)
+	@echo "\033[1;34m[Create $(NAME)]\033[0m"
+	@ranlib $(NAME)
+
+debug:
+	@echo "\033[1;36m[Compile all \".c\" using $(CC) with debug flag]\033[0m"
+	@$(CC) $(FLAGS) -g -I $(DIR) -c $(SRC)
+	@echo "\033[1;36m[Compile all \".o\"]\033[0m"
 	@ar rc $(NAME) $(OBJ)
 	@echo "\033[1;34m[Create $(NAME)]\033[0m"
 	@ranlib $(NAME)
 
 
+
 clean:
-	@echo "\033[1;31m[$(NAME)][Delete all \".o\"]\033[0m"
+	@echo "\033[1;31m[Delete all \".o\"]\033[0m"
 	@rm -f $(OBJ)
 
 fclean: clean
-	@echo "\033[1;31m[$(NAME)][Delete libft.a]\033[0m"
+	@echo "\033[1;31m[Delete libft.a]\033[0m"
 	@rm -f $(NAME)
 
 re: fclean all

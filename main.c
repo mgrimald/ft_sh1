@@ -6,7 +6,7 @@
 /*   By: mgrimald <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/12 20:43:12 by mgrimald          #+#    #+#             */
-/*   Updated: 2015/05/17 13:51:02 by mgrimald         ###   ########.fr       */
+/*   Updated: 2015/05/18 14:06:08 by mgrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ int			main(int argc, char **argv, char **env)
 {
 	int		fd;
 
-	gestion_signal(0);
 	get_env(env, 's');
 	sh_increase_shlvl();
 	fd = 0;
@@ -46,6 +45,7 @@ int			main(int argc, char **argv, char **env)
 		ft_putendl("Sorry, too many files to handle. Only one at a time");
 	else
 	{
+		gestion_signal(0);
 		ft_putendl("Welcome in this basic shell.");
 		sh_help();
 	}
@@ -75,7 +75,7 @@ static void	try_path(char **path, char *cmd, char **tab_cmd, char **env)
 	}
 	if (path[j] == NULL)
 	{
-		ft_putstr("Command not found :");
+		ft_putstr("Command not found: ");
 		ft_putendl(tab_cmd[0]);
 	}
 	else
